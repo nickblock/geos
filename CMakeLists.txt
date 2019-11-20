@@ -266,9 +266,9 @@ include_directories(${PROJECT_BINARY_DIR})
 find_package(Git)
 
 message(STATUS "Generating GEOS ${PROJECT_BINARY_DIR}/geos_revision.h")
-file(WRITE ${CMAKE_BINARY_DIR}/geos_revision.h.in "\#define GEOS_REVISION \"@GEOS_REVISION@\"\n")
+file(WRITE ${PROJECT_BINARY_DIR}/geos_revision.h.in "\#define GEOS_REVISION \"@GEOS_REVISION@\"\n")
 
-file(WRITE ${CMAKE_BINARY_DIR}/geos_revision.cmake
+file(WRITE ${PROJECT_BINARY_DIR}/geos_revision.cmake
 "
 execute_process(COMMAND \${GIT} describe --tags --always
   WORKING_DIRECTORY \${CWD}
